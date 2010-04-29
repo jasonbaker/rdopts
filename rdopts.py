@@ -9,7 +9,9 @@ __revision__ = "$Id$"
 
 import sys, os
 from distutils.core import Command
-
+from distutils.log import set_threshold, ERROR
+set_threshold(ERROR)
+from ConfigParser import SafeConfigParser
 
 class Rdopts(Command):
 
