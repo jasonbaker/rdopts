@@ -28,8 +28,6 @@
 """
 rdopts - read options from setup.cfg
 """
-# created 2000/mm/dd, John Doe
-
 import sys, os
 from distutils.core import Command
 from distutils.log import set_threshold, ERROR
