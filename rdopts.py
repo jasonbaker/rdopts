@@ -7,7 +7,7 @@ Implements the Distutils 'x' command.
 
 __revision__ = "$Id$"
 
-import sys
+import sys, os
 from distutils.core import Command
 
 
@@ -37,5 +37,11 @@ class Rdopts(Command):
             sys.exit(1)
 
     def run (self):
-        pass
+        config = SafeConfigParser()
+        config.read(['./setup.cfg'])
+        if not config.has_section(self.command) or config.has_option(self.command, self.option):
+            print ''
+            return
 
+        val = config.get(self.command, self.option)
+        print val
