@@ -62,7 +62,7 @@ class Rdopts(Command):
     def run (self):
         config = SafeConfigParser()
         config.read(['./setup.cfg'])
-        if not config.has_section(self.command) or config.has_option(self.command, self.option):
+        if not (config.has_section(self.command) or config.has_option(self.command, self.option)):
             print ''
             return
 
