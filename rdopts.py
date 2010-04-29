@@ -20,9 +20,9 @@ class Rdopts(Command):
 
     # List of option tuples: long name, short name (None if no short
     # name), and help string.
-    user_options = [('command', 'c',
+    user_options = [('command=', 'c',
                      "The command to read options for"),
-                    ('option', 'o',
+                    ('option=', 'o',
                      "The name of the option to read"),
                    ]
 
